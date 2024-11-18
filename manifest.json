@@ -5,7 +5,7 @@
     "background_color": "#ffad17",
     "display": "standalone",
     "Scope": "/simple-pwa/",
-    "start_url": "/index.html",
+    "start_url": "/simple-pwa/index.html",
     "icons": [
     ]
 }
