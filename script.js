@@ -13,9 +13,12 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
-
-navigator.storage.persist().then(function (persistent) {
-  if (persistent)
-    console.log("Storage will not be cleared except by explicit user action");
-  else console.log("Storage may be cleared by the UA under storage pressure.");
-});
+if (navigator.storage && navigator.storage.persist) {
+  navigator.storage.persisted().then((persistent) => {
+    if (persistent) {
+      console.log("Storage will not be cleared except by explicit user action");
+    } else {
+      console.log("Storage may be cleared by the UA under storage pressure.");
+    }
+  });
+}
